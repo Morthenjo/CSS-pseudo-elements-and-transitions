@@ -11,9 +11,11 @@ body {
 }
 
 .container::first-letter {
-  font-size: 10rem;
+  font-size: 15rem;
   color: red;
   background-color: aliceblue;
+  font-family: "Updock", cursive;
+  padding: 5rem 0 0 1rem;
 }
 
 .container::first-line {
@@ -36,18 +38,18 @@ a {
 }
 
 .trans2 {
-  transition: all 7s;
   width: 10rem;
   height: 10rem;
   margin: 10rem 0;
-  animation: roll 0.5s infinite;
+  animation: roll linear 0.7s infinite;
+  border-radius: 500px;
 }
 
 @keyframes roll {
-  0% {
+  from {
     transform: rotate(0);
   }
-  100% {
+  to {
     transform: rotate(360deg);
   }
 }
@@ -57,7 +59,7 @@ a {
   transition: all 1s;
   width: 10rem;
   height: 10rem;
-  margin: 10rem 10rem 0 0;
+  margin: 10rem 0 0;
   text-align: center;
   font-size: larger;
 }
@@ -68,7 +70,7 @@ a {
 }
 
 .trans3:hover {
-  animation: strobe 10s infinite;
+  animation: strobe 1s infinite;
 }
 
 .header::before {
@@ -86,12 +88,12 @@ a {
 img {
   width: 10rem;
   height: 10rem;
+  border-radius: 500px;
 }
 
 .container2 {
   margin-left: 10rem;
   display: flex;
-  justify-content: space-evenly;
 }
 
 @keyframes strobe {
@@ -127,5 +129,62 @@ img {
   }
   100% {
     background-color: aqua;
+  }
+}
+
+.trans4 {
+  background: white;
+  animation: flip 1.2s ease infinite;
+  width: 10rem;
+  height: 10rem;
+  margin: 10rem 0 0 0;
+}
+
+@keyframes flip {
+  0% {
+    transform: perspective(10rem) rotateX(0deg) rotateY(0deg);
+  }
+  50% {
+    transform: perspective(10rem) rotateX(-180deg) rotateY(0deg);
+  }
+  100% {
+    transform: perspective(10rem) rotateX(-180deg) rotateY(-180deg);
+  }
+}
+
+.trans5 {
+  margin-top: 12rem;
+  margin-left: 1rem;
+  overflow: hidden;
+  position: relative;
+  height: 1rem;
+  width: 10rem;
+  background: white;
+}
+
+.trans5:before {
+  content: "";
+  position: absolute;
+  left: -130%;
+  width: 100%;
+  height: 100%;
+  background: black;
+  animation: progress 4s linear infinite;
+}
+
+@keyframes progress {
+  0% {
+    left: -130%;
+    background: rgba(black, 0.5);
+  }
+  50% {
+    left: 130%;
+    background: rgba(black, 0.5);
+  }
+  51% {
+    background: rgba(white, 0.5);
+  }
+  100% {
+    background: rgba(white, 0.5);
   }
 }
