@@ -1,0 +1,131 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+
+.container {
+  padding: 2rem;
+  background-color: gray;
+  text-align: center;
+}
+
+.container::first-letter {
+  font-size: 10rem;
+  color: red;
+  background-color: aliceblue;
+}
+
+.container::first-line {
+  background-color: red;
+  font-size: 5rem;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(0, 153, 255);
+}
+
+.trans {
+  background-color: aqua;
+  transition: all 1s;
+  width: 10rem;
+  height: 10rem;
+  margin: 10rem auto;
+  text-align: center;
+}
+
+.trans2 {
+  transition: all 7s;
+  width: 10rem;
+  height: 10rem;
+  margin: 10rem 0;
+  animation: roll 0.5s infinite;
+}
+
+@keyframes roll {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.trans3 {
+  background-color: aqua;
+  transition: all 1s;
+  width: 10rem;
+  height: 10rem;
+  margin: 10rem 10rem 0 0;
+  text-align: center;
+  font-size: larger;
+}
+
+.trans:hover {
+  background-color: red;
+  width: 20rem;
+}
+
+.trans3:hover {
+  animation: strobe 10s infinite;
+}
+
+.header::before {
+  content: "👌";
+}
+
+.header {
+  background-color: brown;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  padding: 2rem 0;
+}
+
+img {
+  width: 10rem;
+  height: 10rem;
+}
+
+.container2 {
+  margin-left: 10rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+@keyframes strobe {
+  0% {
+    background-color: aqua;
+  }
+  10% {
+    background-color: blueviolet;
+  }
+  20% {
+    background-color: bisque;
+  }
+  30% {
+    background-color: green;
+  }
+  40% {
+    background-color: greenyellow;
+  }
+  50% {
+    background-color: rgb(181, 181, 177);
+  }
+  60% {
+    background-color: orange;
+  }
+  70% {
+    background-color: lemonchiffon;
+  }
+  80% {
+    background-color: black;
+  }
+  90% {
+    background-color: blue;
+  }
+  100% {
+    background-color: aqua;
+  }
+}
